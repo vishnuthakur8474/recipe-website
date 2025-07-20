@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yummy Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css"> 
+ 
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-white">Yummy Recipes</h1>
+    <div class="flex items-center space-x-3">
+      <a href="#home" class="text-white hover:text-amber-200">Home</a>
+      <a href="#recipes" class="text-white hover:text-amber-200">Recipes</a>
+      <a href="#reviews" class="text-white hover:text-amber-200">Reviews</a>
+      <a href="#queries" class="text-white hover:text-amber-200">Contact</a>
+      <a href="#about" class="text-white hover:text-amber-200">About</a>
+      <button onclick="openCart()" class="relative bg-white text-orange-500 px-3 py-1 rounded">
+        Cart <span id="cart-count" class="cart-count">0</span>
+      </button>
+      <button onclick="openLogin()" class="bg-white text-orange-500 px-3 py-1 rounded">Login</button>
+      <button onclick="openSignup()" class="bg-white text-orange-500 px-3 py-1 rounded">Signup</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero relative p-8 md:p-16 h-[400px] md:h-[500px]">
+  <img src="https://images.unsplash.com/photo-1636138389529-d35a2a348dc1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Homemade Food"
+    class="absolute inset-0 w-full h-full object-cover rounded-lg shadow-xl z-0" />
+
+  <div class="relative z-10 max-w-xl bg-white/70 backdrop-blur-md p-6 rounded-lg md:ml-12 mt-8 md:mt-16">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-amber-600">Discover & Order Delicious Recipes!</h2>
+    <p class="text-lg text-gray-700 mb-6">Search your favorite meals and get them delivered to your doorstep.</p>
+    <input type="text" id="search" placeholder="Search your recipe..."
+      class="w-full px-4 py-2 rounded-lg text-lg border border-gray-300" />
+  </div>
+</section>
+
+
+  <!-- Recipes Section -->
+  <section id="recipes" class="p-8">
+    <h2 class="text-3xl font-bold text-center mb-8 text-orange-600">Our Top Recipes</h2>
+    <div id="recipe-list" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+  </section>
+
+  <!-- Reviews Section -->
+ 
+<section id="reviews" class="bg-gray-100 py-16">
+  <h2 class="text-3xl font-bold text-center mb-10 text-orange-600">What Our Users Say</h2>
+  
+  <div class="space-y-6 max-w-4xl mx-auto">
+    
+    <!-- Review 1 -->
+    <blockquote class="bg-white p-6 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-2">
+        <strong>Yash Patel</strong>
+        <div class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <p>Amazing food! Will definitely order again.</p>
+    </blockquote>
+
+    <!-- Review 2 -->
+    <blockquote class="bg-white p-6 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-2">
+        <strong>Akash Jadon</strong>
+        <div class="text-yellow-500">⭐️⭐️⭐️⭐️</div>
+      </div>
+      <p>Quick delivery and very tasty meals!</p>
+    </blockquote>
+
+    <!-- Review 3 -->
+    <blockquote class="bg-white p-6 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-2">
+        <strong>Aryan Gupta</strong>
+        <div class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <p>Fresh, hot and super delicious — loved it!</p>
+    </blockquote>
+
+    <!-- Review 4 -->
+    <blockquote class="bg-white p-6 rounded-lg shadow">
+      <div class="flex justify-between items-center mb-2">
+        <strong>Rohit Mehta</strong>
+        <div class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</div>
+      </div>
+      <p>Great variety and healthy options available. Recommend it!</p>
+    </blockquote>
+
+  </div>
+</section>
+
+
+  <!-- Ask Queries Section -->
+  <section id="queries" class="bg-amber-50 p-8">
+    <h2 class="text-3xl font-bold text-center mb-6 text-orange-600">Have a Question?</h2>
+    <form id="query-form" class="max-w-xl mx-auto space-y-4">
+      <input type="text" id="query-name" placeholder="Your Name" class="w-full px-4 py-2 rounded border border-orange-300" />
+      <input type="email" id="query-email" placeholder="Your Email" class="w-full px-4 py-2 rounded border border-orange-300" />
+      <textarea id="query-text" placeholder="Ask your query..." class="w-full px-4 py-2 rounded border border-orange-300"></textarea>
+      <button type="submit" class="bg-orange-500 text-white px-4 py-2 rounded w-full hover:bg-orange-600">Submit Query</button>
+      <p id="query-msg" class="text-green-600 text-center"></p>
+    </form>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-white p-8">
+    <h2 class="text-3xl font-bold text-center mb-4 text-orange-600">About Yummy Recipes</h2>
+    <p class="text-center max-w-2xl mx-auto text-gray-700">
+      Yummy Recipes is your go-to destination for discovering, ordering, and enjoying a wide range of delicious meals. We aim to deliver freshly prepared, mouth-watering recipes to your doorstep with a single click.
+    </p>
+  </section>
+
+  <!-- Modals -->
+  <div id="login-modal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="modal-content bg-white p-6 rounded w-80">
+      <h2 class="text-xl font-bold mb-4 text-amber-600">Login</h2>
+      <input type="text" placeholder="Email" class="p-2 w-full mb-3 border border-orange-300 rounded">
+      <input type="password" placeholder="Password" class="p-2 w-full mb-3 border border-orange-300 rounded">
+      <button onclick="loginUser()" class="bg-orange-500 text-white px-4 py-2 rounded w-full hover:bg-orange-600">Login</button>
+      <p onclick="closeModal()" class="mt-3 text-orange-500 cursor-pointer text-center">Close</p>
+    </div>
+  </div>
+
+  <div id="signup-modal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="modal-content bg-white p-6 rounded w-80">
+      <h2 class="text-xl font-bold mb-4 text-amber-600">Signup</h2>
+      <input type="text" placeholder="Name" class="p-2 w-full mb-3 border border-orange-300 rounded">
+      <input type="email" placeholder="Email" class="p-2 w-full mb-3 border border-orange-300 rounded">
+      <input type="password" placeholder="Password" class="p-2 w-full mb-3 border border-orange-300 rounded">
+      <button onclick="signupUser()" class="bg-orange-500 text-white px-4 py-2 rounded w-full hover:bg-orange-600">Signup</button>
+      <p onclick="closeModal()" class="mt-3 text-orange-500 cursor-pointer text-center">Close</p>
+    </div>
+  </div>
+
+  <div id="cart-modal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="modal-content bg-white p-6 rounded w-80">
+      <h2 class="text-xl font-bold mb-4 text-amber-600">Your Cart</h2>
+      <div id="cart-items" class="mb-4"></div>
+      <p id="cart-total" class="font-bold"></p>
+      <button onclick="checkout()" class="bg-orange-500 text-white px-4 py-2 rounded w-full hover:bg-orange-600">Checkout</button>
+      <p onclick="closeModal()" class="mt-3 text-orange-500 cursor-pointer text-center">Close</p>
+    </div>
+  </div>
+
+  <div id="recipe-modal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="modal-content bg-white p-6 rounded w-80">
+      <h2 id="recipe-title" class="text-xl font-bold mb-4 text-amber-600"></h2>
+      <img id="recipe-image", class="w-full h-40 object-cover rounded mb-4">
+      <p id="recipe-description" class="mb-4"></p>
+      <p id="recipe-price" class="font-bold mb-4"></p>
+      <button onclick="toggleFavorite()" id="favorite-btn" class="text-orange-500 mb-2">Add to Favorites</button>
+      <button onclick="addToCartFromModal()" class="bg-orange-500 text-white px-4 py-2 rounded w-full hover:bg-orange-600">Add to Cart</button>
+      <p onclick="closeModal()" class="mt-3 text-orange-500 cursor-pointer text-center">Close</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 p-4 text-center text-gray-700">
+    © 2025 Yummy Recipes. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

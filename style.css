@@ -1,0 +1,57 @@
+body {
+      scroll-behavior: smooth;
+      background: linear-gradient(to right, #fffaf0, #fff5e1);
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(to right, #ffb347, #ffcc33);
+    }
+    .recipe-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: linear-gradient(to bottom, #fffaf0, #fff);
+    }
+    .recipe-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 14px rgba(255, 140, 0, 0.2);
+    }
+    h2 {
+      text-shadow: 1px 1px #fef9c3;
+    }
+    .hero {
+      background: linear-gradient(to right, #fffaf0, #fff0e5);
+    }
+    #search {
+      border: 2px solid #fbbf24;
+    }
+    #search:focus {
+      outline: none;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.5);
+    }
+    button {
+      transition: all 0.2s ease-in-out;
+    }
+    button:hover {
+      transform: scale(1.03);
+    }
+    .modal {
+      transition: opacity 0.2s;
+    }
+    .modal-content {
+      transition: transform 0.2s;
+    }
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #e53e3e;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 10px;
+    }
+    .favorite {
+      color: #e53e3e;
+    }
