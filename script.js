@@ -61,23 +61,65 @@ const recipes = [
       alert(`${name} added to your cart!`);
     }
 
+    // function updateCart() {
+    //   const cartItems = document.getElementById("cart-items");
+    //   const cartTotal = document.getElementById("cart-total");
+    //   const cartCount = document.getElementById("cart-count");
+    //   cartItems.innerHTML = "";
+    //   let total = 0;
+    //   cart.forEach((item, index) => {
+    //     cartItems.innerHTML += `
+    //       <div class="flex justify-between mb-2 text-sm">
+    //         <span>${item.name}</span>
+    //         <span>$${item.price} <button onclick="removeFromCart(${index})" class="text-red-500 hover:underline">Remove</button></span>
+    //       </div>`;
+    //     total += item.price;
+    //   });
+    //   cartTotal.innerText = `Total: $${total}`;
+    //   cartCount.innerText = cart.length;
+    // }
+
+
+
+
+
+
     function updateCart() {
-      const cartItems = document.getElementById("cart-items");
-      const cartTotal = document.getElementById("cart-total");
-      const cartCount = document.getElementById("cart-count");
-      cartItems.innerHTML = "";
-      let total = 0;
-      cart.forEach((item, index) => {
-        cartItems.innerHTML += `
-          <div class="flex justify-between mb-2 text-sm">
-            <span>${item.name}</span>
-            <span>$${item.price} <button onclick="removeFromCart(${index})" class="text-red-500 hover:underline">Remove</button></span>
-          </div>`;
-        total += item.price;
-      });
-      cartTotal.innerText = `Total: $${total}`;
-      cartCount.innerText = cart.length;
-    }
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  const cartCount = document.getElementById("cart-count");
+
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    cartItems.innerHTML += `
+      <div class="flex justify-between mb-2 text-sm">
+        <span>${item.name}</span>
+        <span>
+          $${item.price}
+          <button onclick="placeOrder(${index})" class="text-green-600 hover:underline ml-2">Order</button>
+        </span>
+      </div>`;
+    total += item.price;
+  });
+
+  cartTotal.innerText = `Total: $${total}`;
+  cartCount.innerText = cart.length;
+}
+
+
+
+    function placeOrder(index) {
+  const item = cart[index];
+  if (item) {
+    alert(`✅ Order placed for: ${item.name}`);
+  } else {
+    alert("⚠️ Item not found.");
+  }
+}
+
+
 
     function removeFromCart(index) {
       cart.splice(index, 1);
