@@ -1,7 +1,11 @@
 const recipes = [
       { name: "Cheesy Pizza", price: 12, image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNoZWVzZSUyMHBpenphfGVufDB8fDB8fHww", description: "Mix flour, yeast, sugar, salt, warm water, oil. Rest 1 hour, cook garlic, onion, tomato puree, chili flakes, oregano, salt, roll dough, spread sauce, add cheese." },
       { name: "Burger", price: 9, image: "https://images.unsplash.com/photo-1603064752734-4c48eff53d05?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1cmdlcnxlbnwwfHwwfHx8MA%3D%3D", description: "Fry the patty, toast the buns, spread sauce, add lettuce, place patty, put cheese, add onion and tomato, cover with top bun." },
-      { name: "Healthy Salad", price: 7, image: "https://images.unsplash.com/photo-1708184528305-33ce7daced65?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGVhbHRoeSUyMHNhbGFkfGVufDB8fDB8fHww", description: "Chop cucumber, tomato, onion, lettuce, and carrots, add boiled chickpeas, drizzle olive oil, lemon juice, salt, and pepper — toss well and serve. 🥗" }
+      { name: "Healthy Salad", price: 7, image: "https://images.unsplash.com/photo-1708184528305-33ce7daced65?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGVhbHRoeSUyMHNhbGFkfGVufDB8fDB8fHww", description: "Chop cucumber, tomato, onion, lettuce, and carrots, add boiled chickpeas, drizzle olive oil, lemon juice, salt, and pepper — toss well and serve. 🥗" },
+      { name: "Pasta Alfredo", price: 11, image: "https://images.unsplash.com/photo-1662197480393-2a82030b7b83?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", description: "Boil pasta, melt butter, cook garlic, add cream and cheese, mix until creamy, add pasta, stir and garnish with parsley." },
+      { name: "Paneer Tikka", price: 10, image: "https://images.unsplash.com/photo-1690401767645-595de0e0e5f8?q=80&w=1013&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", description: "Marinate paneer cubes in yogurt, spices, and lemon juice. Skewer with onions and peppers, grill until golden, serve hot." },
+      { name: "Chocolate Cake", price: 15, image: "https://images.unsplash.com/photo-1605807646983-377bc5a76493?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Q2hvY29sYXRlJTIwQ2FrZXxlbnwwfHwwfHx8MA%3D%3D", description: "Mix flour, cocoa, baking powder, eggs, sugar, butter. Pour into pan, bake at 180°C for 30 mins, cool and frost with chocolate ganache." }
+
     ];
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -60,29 +64,6 @@ const recipes = [
       updateCart();
       alert(`${name} added to your cart!`);
     }
-
-    // function updateCart() {
-    //   const cartItems = document.getElementById("cart-items");
-    //   const cartTotal = document.getElementById("cart-total");
-    //   const cartCount = document.getElementById("cart-count");
-    //   cartItems.innerHTML = "";
-    //   let total = 0;
-    //   cart.forEach((item, index) => {
-    //     cartItems.innerHTML += `
-    //       <div class="flex justify-between mb-2 text-sm">
-    //         <span>${item.name}</span>
-    //         <span>$${item.price} <button onclick="removeFromCart(${index})" class="text-red-500 hover:underline">Remove</button></span>
-    //       </div>`;
-    //     total += item.price;
-    //   });
-    //   cartTotal.innerText = `Total: $${total}`;
-    //   cartCount.innerText = cart.length;
-    // }
-
-
-
-
-
 
     function updateCart() {
   const cartItems = document.getElementById("cart-items");
