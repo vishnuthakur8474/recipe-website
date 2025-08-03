@@ -1,4 +1,4 @@
-body {
+    body {
       scroll-behavior: smooth;
       background: linear-gradient(to right, #fffaf0, #fff5e1);
     }
@@ -54,4 +54,7 @@ body {
     }
     .favorite {
       color: #e53e3e;
+    }
+    #home, #recipes, #reviews, #queries, #about {
+      padding-top: 80px;
     }
