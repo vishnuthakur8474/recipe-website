@@ -32,6 +32,8 @@ CSS3 — custom styles and layout enhancements
 
 Tailwind CSS (via CDN) — responsive utility-first styling
 
+Used SweetAlert2 library for stylish and customizable popup alerts.
+
 Vanilla JavaScript — interactivity, localStorage handling, form validation
 
 Unsplash Images — for visually appealing recipes
